@@ -48,3 +48,7 @@ select emp.title, avg(salary) from
 (select emp.emp_no, (select title from titles where titles.title_id=emp.emp_title_id) title
 from employees emp) emp, salaries where emp.emp_no=salaries.emp_no
 group by title
+
+
+
+select empl.last_name, count(*) NumSameLastName from employees empl group by empl.last_name order by 2 desc
